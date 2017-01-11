@@ -50,7 +50,7 @@ def sigin(request):
 def my_sendmail(request):
 	'''msg=EmailMessage('Request CallBack','Here is THE MESSAGE',to=['18734131050@163.com'])
 	msg.send()'''
-	send_mail("it\'s phf\'s email",'hello phf','18734131050@163.com',['18734131050@163.com','634180966@qq.com'],auth_user='18734131050@163.com',auth_password='phf071022')
+	send_mail("it\'s phf\'s email",'hello phf','18734131050@163.com',['your email@163.com','your email@qq.com'],auth_user='your email@163.com',auth_password='your password')
 	return render(request,'login.html')
 @login_required
 def  sendmail(request):
