@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Welcome</title>
+</head>
+<body>
+{%if error_message %}
+{{error_message}}
+<a href="/sigin">sigin</a>
+{%endif%}
+{% if sigin_form or login_form%}
+<form method='POST'>
+{% if sigin_form %}
+{{sigin_form.as_p}}
+           <input type="submit" name="signin" value="sigin">
+{%elif login_form%}
+{{login_form.as_p}}
+	<input type="submit" name="login" value="login">
+</form>
+{%endif%}
+{%endif%}
+</body>
+</html>

@@ -1,0 +1,62 @@
+</!DOCTYPE html>
+<html>
+<head>
+{%block head%}
+<link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">  
+	<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+{%endblock%}
+<style>
+ul
+{
+list-style-type:none;
+margin:0;
+padding:0;
+}
+</style>
+<meta charset="utf-8">
+	<title>
+		{%block title%}
+		{%endblock%}
+	</title>
+</head>
+<body>
+<nav class="navbar navbar-default" role="navigation">
+<div class="container-fluid">
+<div class="navbar-header">
+<a class="navbar-brand" href="#">文章搜索</a>
+</div>
+<div>
+<form class="navbar-form navbar-left" role="search">
+<div class="form-group">
+<input type="text" class="form-control" placeholder="Search">
+</div>
+<button type="submit" class="btn btn-default">提交</button>
+</form>
+<ul class="nav nav-tabs nav-justified">
+<li ><a href="/home">Home</a></li>
+<li><a  href="/articles">我的文章</a></li>
+<li><a href="/drafts">我的草稿箱</a></li>
+<li><a href="/sendmail">发送邮件</a></li>
+</ul>
+<div class="nav navbar-nav navbar-right">
+      {%if user.is_authenticated %}
+      <li class="dropdown">
+          <a  class= "dropdown-toggle" data-toggle="dropdown" href="/info">Info<span class="caret"></span>
+          </a>
+      <ul class="dropdown-menu">
+        <li><a href="/logout">logout</a></li>    
+        </ul>
+          </li>
+     {%else%}
+      <li><a href="/sigin">Sigin</a></li>
+     <li><a href="/logout">Login</a></li>
+     {%endif%}
+    </div>
+</div>
+</div>
+</nav>
+{%block content %}
+{%endblock%}
+</body>
+</html>

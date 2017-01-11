@@ -1,0 +1,51 @@
+{%extends "base.html"%}
+{%block content%}
+{%if article_form%}
+	<form method='POST'>
+	{{article_form.as_p}}
+	<input  type='submit' value='submit'>
+	</form>
+{%elif articles %}
+<div class="row">
+					<div class="col-md-4 col-md-offset-3" >
+						<table WIDTH=400 HEIGHT=100>
+						<tr align="left"> <td><font size="6">文章列表</font> </td>
+						</tr>
+						</table>
+						<table class="table table-striped table-hover ">
+							{%for article in articles%}
+							<tbody>
+							<tr>
+							     <td><a href="/article/{{article.pk}}/">{{article.headline}}</a></td>
+							</tr>
+							<tr>
+							       <td>{{article.content|truncatewords:20}}</td>
+							</tr>
+							</tbody>
+							{%endfor%}
+							</table>						
+					</div>
+</div>
+{%else%}
+	 <a href="/article/{{article.pk}}/">{{article.headline}}</a>
+	 <p>{{article.content}}
+	 </p>
+	{%if article.is_published%}
+		<form  method="POST">
+		<input type="text" name="comment">
+		<input type="submit" value="评论">
+		</form>
+		<table  cellspacing="16" bgcolor="red" align="left" width=400> 
+		{%for comment in comments%}
+			<tr>
+			<td>{{comment.pk}}楼,{{comment.pub_username}}发表</td>
+			</tr>
+			<tr>
+			<td>{{comment.content}}</td>
+			</tr>
+		{%endfor%}
+		</table>
+	{%endif%}	
+{%endif%}
+
+{%endblock%}

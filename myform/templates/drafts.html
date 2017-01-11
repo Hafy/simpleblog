@@ -1,0 +1,41 @@
+{%extends "base.html"%}
+{%block content%}
+{%if not edit%}
+<a href=""><font size=8>我的草稿箱</font> </a>
+<table class="table table-striped table-hover ">
+{%for article in articles%}
+{%if  not article.is_published %}
+<tbody>
+<tr>
+     <td><a href="/articles/{{article.pk}}/">{{article.headline}}</a></td>
+     <td align="right"><a href="/postedit/{{article.pk}}">编辑</a></td>
+     <td align="left"><a href="/del/{{article.pk}}">删除</a></td>
+</tr>
+</tbody>
+{%endif%}
+{%endfor%}
+</table>
+{%else%}
+<form   method="POST">
+<p>
+<label for="id_headline"> Headline:</label>
+<input type="text" name="headline" id="id_headline" max_length="100" value={{article.headline}}>
+</p>
+<p>
+<label for="id_writer">Writer:</label>
+<input type="text" name="writer"  id= "id_writer" value={{article.writer}}>
+</p>
+<p>
+<label for="id_content">Content:</label>
+<textarea cols="40 " rows="10" name="content" id="id_content">
+{{article.content}}
+</textarea>
+</p>
+<p>
+<label for="is_published">Is published:</label>
+<input type="checkbox" name="is_published" id="is_published" checked="checked">
+</p>
+<input type="submit" name="submit" value="submit">
+</form>
+{%endif%}
+{%endblock%}
