@@ -34,7 +34,7 @@
 							     <td><a href="/article/{{article.pk}}/">{{article.headline}}</a></td>
 							</tr>
 							<tr>
-							       <td>{{article.content|truncatewords:20}}</td>
+							       <td>{{article.content|truncatechars:20}}</td>
 							</tr>
 							</tbody>
 							{%endif%}

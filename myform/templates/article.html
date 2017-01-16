@@ -19,7 +19,7 @@
 							     <td><a href="/article/{{article.pk}}/">{{article.headline}}</a></td>
 							</tr>
 							<tr>
-							       <td>{{article.content|truncatewords:20}}</td>
+							       <td>{{article.content|truncatechars:20}}</td>
 							</tr>
 							</tbody>
 							{%endfor%}
@@ -41,7 +41,7 @@
 			<td>{{comment.pk}}楼,{{comment.pub_username}}发表</td>
 			</tr>
 			<tr>
-			<td>{{comment.content}}</td>
+			<td>{{comment.content|truncatechars:20}}</td>
 			</tr>
 		{%endfor%}
 		</table>

@@ -75,7 +75,7 @@ def Home(request):
 	authors=Author.objects.all()
 	user=request.user
 	page=request.GET.get('page')
-	paginator=Paginator(articles,3)
+	paginator=Paginator(articles,5)
 	#paginator
 	try:
 		posts=paginator.page(page)
