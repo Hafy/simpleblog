@@ -4,13 +4,13 @@ from django.db import models
 
 # Create your models here.
 class Theme(models.Model):
-	theme_name=models.CharField(max_length=30)
+	theme_name=models.CharField(max_length=30,default='null')
 	class Meta:
 		db_table="theme"
 	def __str__(self):
 		return self.theme_name
 class Article(models.Model):
-	themes=models.ManyToManyField(Theme)
+	themes=models.ManyToManyField(Theme,blank=True,null=True)
 	pub_date=models.DateField(auto_now=True)
 	headline=models.CharField(max_length=100)
 	content=models.TextField()

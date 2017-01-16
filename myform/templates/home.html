@@ -34,7 +34,7 @@
 							     <td><a href="/article/{{article.pk}}/">{{article.headline}}</a></td>
 							</tr>
 							<tr>
-							       <td>{{article.content|truncatechars:20}}</td>
+							       <td>{{article.content|truncatechars:50}}</td>
 							</tr>
 							</tbody>
 							{%endif%}
@@ -64,7 +64,7 @@
 							{%for comment in comments%}
 							<tbody>
 							<tr>
-							     <td><a href="/article/{{comment.article.pk}}/">{{comment.content}}</a></td>
+							     <td><a href="/article/{{comment.article.pk}}/">{{comment.content|truncatechars:50}}</a></td>
 							</tr>
 							</tbody>
 							{%endfor%}
