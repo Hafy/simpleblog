@@ -6,7 +6,7 @@ from django.contrib.auth.models import User
 '''class Comment(forms.ModelForm):
 		class Meta:
 		model=Comment
-		fields=['pub_user','article','contents']
+		fields=['pub_user','article','content']
 '''
 class LoginForm(forms.ModelForm):
 	class Meta:
