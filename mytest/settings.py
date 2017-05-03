@@ -25,7 +25,7 @@ SECRET_KEY = 'vcx5h_4$+f+154g#)@f3f9e74k65t+1(5tv-=yf=pck$*-qtdy'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1','localhost','.hafy.site']
 
 
 # Application definition
@@ -123,7 +123,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 
 STATIC_URL = '/static/'
-
+STATIC_ROOT= os.path.join(BASE_DIR,'static')
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
   
 
