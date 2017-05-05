@@ -2,3 +2,63 @@
 [2017-05-05 10:35:57 +0000] [26075] [INFO] Listening at: unix:/tmp/hafy.site.socket (26075)
 [2017-05-05 10:35:57 +0000] [26075] [INFO] Using worker: sync
 [2017-05-05 10:35:57 +0000] [26080] [INFO] Booting worker with pid: 26080
+[2017-05-05 13:56:41 +0000] [26685] [INFO] Starting gunicorn 19.7.1
+[2017-05-05 13:56:41 +0000] [26685] [INFO] Listening at: unix:/tmp/hafy.site.socket (26685)
+[2017-05-05 13:56:41 +0000] [26685] [INFO] Using worker: sync
+[2017-05-05 13:56:41 +0000] [26690] [INFO] Booting worker with pid: 26690
+[2017-05-05 14:41:00 +0000] [27280] [INFO] Booting worker with pid: 27280
+[2017-05-05 14:41:00 +0000] [26685] [INFO] Handling signal: hup
+[2017-05-05 14:41:00 +0000] [26685] [INFO] Hang up: Master
+[2017-05-05 14:41:00 +0000] [26685] [INFO] Handling signal: term
+Traceback (most recent call last):
+  File "/home/hafy/sites/demo.hafy.site/env/bin/gunicorn", line 11, in <module>
+    sys.exit(run())
+  File "/home/hafy/sites/demo.hafy.site/env/local/lib/python2.7/site-packages/gunicorn/app/wsgiapp.py", line 74, in run
+    WSGIApplication("%(prog)s [OPTIONS] [APP_MODULE]").run()
+  File "/home/hafy/sites/demo.hafy.site/env/local/lib/python2.7/site-packages/gunicorn/app/base.py", line 203, in run
+    super(Application, self).run()
+  File "/home/hafy/sites/demo.hafy.site/env/local/lib/python2.7/site-packages/gunicorn/app/base.py", line 72, in run
+    Arbiter(self).run()
+  File "/home/hafy/sites/demo.hafy.site/env/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 227, in run
+    self.halt()
+  File "/home/hafy/sites/demo.hafy.site/env/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 344, in halt
+    self.stop()
+  File "/home/hafy/sites/demo.hafy.site/env/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 382, in stop
+    sock.close_sockets(self.LISTENERS, unlink)
+  File "/home/hafy/sites/demo.hafy.site/env/local/lib/python2.7/site-packages/gunicorn/sock.py", line 208, in close_sockets
+    os.unlink(sock_name)
+OSError: [Errno 2] No such file or directory: '/tmp/hafy.site.socket'
+[2017-05-05 14:41:00 +0000] [27336] [INFO] Booting worker with pid: 27336
+[2017-05-05 06:41:01 +0000] [27280] [INFO] Worker exiting (pid: 27280)
+[2017-05-05 06:41:01 +0000] [27336] [INFO] Parent changed, shutting down: <Worker 27336>
+[2017-05-05 06:41:01 +0000] [27336] [INFO] Worker exiting (pid: 27336)
+[2017-05-05 16:50:17 +0000] [1091] [INFO] Starting gunicorn 19.7.1
+[2017-05-05 16:50:17 +0000] [1091] [INFO] Listening at: unix:/tmp/hafy.site.socket (1091)
+[2017-05-05 16:50:17 +0000] [1091] [INFO] Using worker: sync
+[2017-05-05 16:50:17 +0000] [1096] [INFO] Booting worker with pid: 1096
+[2017-05-05 16:50:20 +0000] [1091] [INFO] Handling signal: int
+[2017-05-05 08:50:20 +0000] [1096] [INFO] Worker exiting (pid: 1096)
+[2017-05-05 16:50:20 +0000] [1091] [INFO] Shutting down: Master
+[2017-05-05 16:53:04 +0000] [1143] [INFO] Starting gunicorn 19.7.1
+[2017-05-05 16:53:04 +0000] [1143] [INFO] Listening at: unix:/tmp/hafy.site.socket (1143)
+[2017-05-05 16:53:04 +0000] [1143] [INFO] Using worker: sync
+[2017-05-05 16:53:04 +0000] [1148] [INFO] Booting worker with pid: 1148
+[2017-05-05 16:53:05 +0000] [1143] [INFO] Handling signal: int
+[2017-05-05 08:53:05 +0000] [1148] [INFO] Worker exiting (pid: 1148)
+[2017-05-05 16:53:05 +0000] [1143] [INFO] Shutting down: Master
+[2017-05-05 16:53:38 +0000] [1159] [INFO] Starting gunicorn 19.7.1
+[2017-05-05 16:53:38 +0000] [1159] [INFO] Listening at: unix:/tmp/hafy.site.socket (1159)
+[2017-05-05 16:53:38 +0000] [1159] [INFO] Using worker: sync
+[2017-05-05 16:53:38 +0000] [1164] [INFO] Booting worker with pid: 1164
+[2017-05-05 16:53:39 +0000] [1159] [INFO] Handling signal: int
+[2017-05-05 08:53:39 +0000] [1164] [INFO] Worker exiting (pid: 1164)
+[2017-05-05 16:53:39 +0000] [1159] [INFO] Shutting down: Master
+[2017-05-05 18:52:33 +0000] [902] [INFO] Starting gunicorn 19.7.1
+[2017-05-05 18:52:33 +0000] [902] [INFO] Listening at: unix:/tmp/hafy.site.socket (902)
+[2017-05-05 18:52:33 +0000] [902] [INFO] Using worker: sync
+[2017-05-05 18:52:33 +0000] [907] [INFO] Booting worker with pid: 907
+[2017-05-05 18:52:47 +0000] [902] [INFO] Handling signal: hup
+[2017-05-05 18:52:47 +0000] [902] [INFO] Hang up: Master
+[2017-05-05 18:52:47 +0000] [902] [INFO] Handling signal: term
+[2017-05-05 18:52:47 +0000] [950] [INFO] Booting worker with pid: 950
+[2017-05-05 18:53:17 +0000] [902] [INFO] Shutting down: Master
