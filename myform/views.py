@@ -27,7 +27,7 @@ def mylogin(request):
 		else:
 			if user.is_active:
 				login(request, user)
-				return HttpResponseRedirect("/home")
+				return HttpResponseRedirect("/")
 			else:
 				return render(request,"index.html",{"error_message":'the user is disable'})
 	else:
@@ -71,7 +71,7 @@ def  sendmail(request):
 def Home(request):
 	articles=Article.objects.all()
 	themes=Theme.objects.all()	
-	comments=Comment.objects.filter(pk__lte=3).order_by('comment_date')
+	comments=Comment.objects.order_by('-comment_date')[:4]
 	authors=Author.objects.all()
 	user=request.user
 	page=request.GET.get('page')
@@ -101,7 +101,7 @@ def Add_Article(request):
 		form=ArticleForm(request.POST)
 		if form.is_valid():
 			form.save()
-			return HttpResponseRedirect('/home')
+			return HttpResponseRedirect('/')
 	else:
 		form=ArticleForm()
 	return  render(request,'article.html',{'article_form':form})
@@ -111,7 +111,7 @@ def Add_Author(request):
 		form=AuthorForm(request.POST)
 		if form.is_valid():
 			form.save()
-			return HttpResponseRedirect('/home')
+			return HttpResponseRedirect('/')
 	else:
 		form=AuthorForm()
 	return  render(request,'home.html',{'author_form':form})

@@ -21,7 +21,7 @@ urlpatterns = [
     url(r'^login/$',views.mylogin),
     url(r'^logout/$',views.mylogout),
     url(r'^sigin/$',views.sigin),
-    url(r'^home',views.Home),
+    url(r'^$',views.Home),
     url(r'^add_articles/$',views.Add_Article),
     url(r'^articles/$',views.show_articles),
     url(r'^drafts/$',views.drafts),
