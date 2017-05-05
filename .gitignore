@@ -1,4 +1,9 @@
 *.pyc
 __pycache__
+<<<<<<< HEAD
 db.sqlite3
 myform/migrations/
+=======
+myform/migrations/
+db.sqlite3 
+>>>>>>> d1c67bdaabab6571a42d685448fbe94add10b5de
