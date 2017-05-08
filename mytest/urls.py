@@ -30,7 +30,6 @@ urlpatterns = [
     url(r'^postedit/(\d+)/$',views.edit),
     url(r'^sendmail/$',views.sendmail),
     url(r'^theme/(\d+)',views.theme_articles),
-    #url(r'^remove/(\d+)/$',views.remove),
-   # url(r'^authors/$',views.Add_Author),
-   # url(r'^articles/$',views.show ),
+    url(r'^photo/$',views.photo),
 ]
+

@@ -1,6 +1,6 @@
 #encoding:utf-8
 from django.shortcuts import render
-from .forms import LoginForm,MailForm,ArticleForm,AuthorForm,SiginForm
+from .forms import LoginForm,MailForm,ArticleForm,AuthorForm,SiginForm,PhotoForm
 from django.core.mail import send_mail
 from  django.http import HttpResponseRedirect
 from .models import Article,Author,Comment,Theme
@@ -12,6 +12,15 @@ from django.core.paginator import Paginator,EmptyPage,PageNotAnInteger
 # Create your views here.
 '''def login(request):
 	username=request.POST['username']'''
+def photo(request):
+	if request.method=='POST':
+		form=PhotoForm(request.POST,request.FILES)
+		if form.is_valid():
+			form.save()		
+			return HttpResponseRedirect("/")			
+	else:
+		form=PhotoForm()
+	return render(request,'photo.html',{'form':form})
 def mylogout(request):
 	logout(request)
 	return HttpResponseRedirect("/login")
@@ -69,9 +78,9 @@ def  sendmail(request):
 	return render(request,'sendmail.html',{'form':form})
 
 def Home(request):
-	articles=Article.objects.all()
+	articles=Article.objects.all().order_by('-id')
 	themes=Theme.objects.all()	
-	comments=Comment.objects.order_by('-comment_date')[3:6]
+	comments=Comment.objects.order_by('-id')[:4]
 	authors=Author.objects.all()
 	user=request.user
 	page=request.GET.get('page')

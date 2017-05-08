@@ -1,13 +1,13 @@
 #coding=utf-8
 from django import forms
-from myform.models import Article,Author,Comment
+from myform.models import Article,Author,Comment,Photo
 from django.contrib.auth.models import User
 
-'''class Comment(forms.ModelForm):
-		class Meta:
-		model=Comment
-		fields=['pub_user','article','contents']
-'''
+class PhotoForm(forms.ModelForm):
+	class Meta:
+		model=Photo
+	        fields=['photo']
+
 class LoginForm(forms.ModelForm):
 	class Meta:
 		model=User

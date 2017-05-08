@@ -3,6 +3,11 @@ from __future__ import unicode_literals
 from django.db import models
 
 # Create your models here.
+class Photo(models.Model):
+	photo=models.FileField(blank=True,null=True)
+
+	class Meta:
+		db_table='Photo'
 class Theme(models.Model):
 	theme_name=models.CharField(max_length=30,default='null')
 	class Meta:
