@@ -71,7 +71,7 @@ def  sendmail(request):
 def Home(request):
 	articles=Article.objects.all()
 	themes=Theme.objects.all()	
-	comments=Comment.objects.order_by('-comment_date')[:4]
+	comments=Comment.objects.order_by('-comment_date')[3:6]
 	authors=Author.objects.all()
 	user=request.user
 	page=request.GET.get('page')
